@@ -1,6 +1,7 @@
-# NET.S.2018
-Developing ASP.NET MVC web applications training, spring 2018.
-Tasks for Day 1:
+#### Developing ASP.NET MVC web applications training, spring 2018.
+
+##### Tasks for Day 1:
+
 1. Cоздать многофайловую сборку. Назначить сборке строе имя. Поместить сборку в GAC. Проанализировать полученную сборку с помощью ILDASM, JetBrains dotPeek.
 
 2. Реализовать методы быстрой сортировки и сортировки слиянием для целочисленного массива (тип проекта Class Library). Протестировать работу методов с использование тестового фреймворка MS Tests.
