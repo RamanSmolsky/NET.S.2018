@@ -1,0 +1,70 @@
+**********************************************************************
+** Visual Studio 2017 Developer Command Prompt v15.6.3
+** Copyright (c) 2017 Microsoft Corporation
+**********************************************************************
+
+C:\Windows\System32>cd c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars\
+
+c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars>csc /t:library /addmodule:auto.netmodule/out:car.dll sportcar.cs
+Компилятор Microsoft (R) Visual C# версии 2.7.0.62707 (75dfc9b3)
+c Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+error CS0006: Не удалось найти файл метаданных "auto.netmodule/out:car.dll".
+
+c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars>csc /t:library /addmodule:auto.netmodule /out:car.dll sportcar.cs
+Компилятор Microsoft (R) Visual C# версии 2.7.0.62707 (75dfc9b3)
+c Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+
+c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars>csc /t:module auto.cs
+Компилятор Microsoft (R) Visual C# версии 2.7.0.62707 (75dfc9b3)
+c Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+
+c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars>csc /t:module minicar.cs
+Компилятор Microsoft (R) Visual C# версии 2.7.0.62707 (75dfc9b3)
+c Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+
+c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars>csc /t:module sport.car
+Компилятор Microsoft (R) Visual C# версии 2.7.0.62707 (75dfc9b3)
+c Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+error CS2001: Не удалось найти исходный файл "c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars\sport.car".
+
+c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars>csc /t:module sportcar.cs
+Компилятор Microsoft (R) Visual C# версии 2.7.0.62707 (75dfc9b3)
+c Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+
+c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars>csc /t:library /addmodule:auto.netmodule minicar.netmodule sportcar.netmodule /out:car.dll
+Компилятор Microsoft (R) Visual C# версии 2.7.0.62707 (75dfc9b3)
+c Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+error CS2015: 'c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars\minicar.netmodule" является двоичным файлом, а не текстовым.
+error CS2015: 'c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars\sportcar.netmodule" является двоичным файлом, а не текстовым.
+
+c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars>csc /t:library /addmodule:auto.netmodule, minicar.netmodule, sportcar.netmodule /out:car.dll
+Компилятор Microsoft (R) Visual C# версии 2.7.0.62707 (75dfc9b3)
+c Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+error CS2001: Не удалось найти исходный файл "c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars\minicar.netmodule,".
+error CS2015: 'c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars\sportcar.netmodule" является двоичным файлом, а не текстовым.
+
+c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars>csc /t:library /addmodule:auto.netmodule /addmodule:minicar.netmodule /addmodule:sportcar.netmodule /out:car.dll
+Компилятор Microsoft (R) Visual C# версии 2.7.0.62707 (75dfc9b3)
+c Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+
+c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars>csc /r:car.dll client.cs
+Компилятор Microsoft (R) Visual C# версии 2.7.0.62707 (75dfc9b3)
+c Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+error CS2001: Не удалось найти исходный файл "c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars\client.cs".
+
+c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars>csc /r:car.dll clients.cs
+Компилятор Microsoft (R) Visual C# версии 2.7.0.62707 (75dfc9b3)
+c Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+
+c:\GitHub-RamanSmolsky\NET.S.2018\NET.S.2018.Smolsky.01\MultyFilesAssembly\Cars>
