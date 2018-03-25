@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntJaggedArraySorting", "In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntJaggedArraySortingTests", "IntJaggedArraySortingTests\IntJaggedArraySortingTests.csproj", "{9CE023D2-C606-4845-A354-023058E71451}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolynomMath", "Polynom\PolynomMath.csproj", "{80527D15-E9B2-415F-AB15-C6947241B944}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolynomMathTests", "PolynomMathTests\PolynomMathTests.csproj", "{FCBFA8E4-CC86-4659-88DB-45F3D1A0DD8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{9CE023D2-C606-4845-A354-023058E71451}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CE023D2-C606-4845-A354-023058E71451}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CE023D2-C606-4845-A354-023058E71451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80527D15-E9B2-415F-AB15-C6947241B944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80527D15-E9B2-415F-AB15-C6947241B944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80527D15-E9B2-415F-AB15-C6947241B944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80527D15-E9B2-415F-AB15-C6947241B944}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCBFA8E4-CC86-4659-88DB-45F3D1A0DD8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCBFA8E4-CC86-4659-88DB-45F3D1A0DD8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCBFA8E4-CC86-4659-88DB-45F3D1A0DD8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCBFA8E4-CC86-4659-88DB-45F3D1A0DD8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
