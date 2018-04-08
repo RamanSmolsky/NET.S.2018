@@ -6,61 +6,61 @@ using NUnit.Framework;
 namespace IntJaggedArraySortingTests
 {
     [TestFixture]
-    public class IntJaggedArraySortingBySumTests
+    public class OLdIntJaggedArraySortingByParametersTests
     {
         private const string IncorrectSortBySumMsg = "jagged array was sorted by Sum incorrectly";
         private const string IncorrectSortByMaxValueMsg = "jagged array was sorted by Max value incorrectly";
         private const string IncorrectSortByMinValueMsg = "jagged array was sorted by Min value incorrectly";
 
-        #region tests for sorting by Sum
+        #region sorting by Sum
 
         [Test]
-        public void SortBySumAscTwoArraysWithOneElementUnsortedTest()
+        public void OldSortBySumAscTwoArraysWithOneElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { 2 }, new int[] { 1 } };
             int[][] arrayToSortExpected = { new int[] { 1 }, new int[] { 2 } };
-            BubbleSort.Sort(arrayToSort);
+            BubbleSort.SortOld1(arrayToSort);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortBySumMsg);
         }
 
         [Test]
-        public void SortBySumAscTwoArraysWithOneNegativeElementSortedTest()
+        public void OldSortBySumAscTwoArraysWithOneNegativeElementSortedTest()
         {
             int[][] arrayToSort = { new int[] { -2 }, new int[] { 1 } };
             int[][] arrayToSortExpected = { new int[] { -2 }, new int[] { 1 } };
-            BubbleSort.Sort(arrayToSort);
+            BubbleSort.SortOld1(arrayToSort);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortBySumMsg);
         }
 
         [Test]
-        public void SortBySumAscTwoArraysWithOneNegativeElementUnsortedTest()
+        public void OldSortBySumAscTwoArraysWithOneNegativeElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { 1 }, new int[] { -2 } };
             int[][] arrayToSortExpected = { new int[] { -2 }, new int[] { 1 } };
-            BubbleSort.Sort(arrayToSort);
+            BubbleSort.SortOld1(arrayToSort);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortBySumMsg);
         }
 
         [Test]
-        public void SortBySumAscTwoArraysWithOneMaxIntElementUnsortedTest()
+        public void OldSortBySumAscTwoArraysWithOneMaxIntElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { int.MaxValue }, new int[] { 1 } };
             int[][] arrayToSortExpected = { new int[] { 1 }, new int[] { int.MaxValue } };
-            BubbleSort.Sort(arrayToSort);
+            BubbleSort.SortOld1(arrayToSort);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortBySumMsg);
         }
 
         [Test]
-        public void SortBySumAscTwoArraysWithOneMinIntElementUnsortedTest()
+        public void OldSortBySumAscTwoArraysWithOneMinIntElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { 1 }, new int[] { int.MinValue } };
             int[][] arrayToSortExpected = { new int[] { int.MinValue }, new int[] { 1 } };
-            BubbleSort.Sort(arrayToSort);
+            BubbleSort.SortOld1(arrayToSort);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortBySumMsg);
         }
 
         [Test]
-        public void SortBySumAscTwoArraysWithZeroedSubArraysUnsortedTest()
+        public void OldSortBySumAscTwoArraysWithZeroedSubArraysUnsortedTest()
         {
             int[][] arrayToSort =
                 {
@@ -78,137 +78,137 @@ namespace IntJaggedArraySortingTests
                     new int[] { 1 },
                     new int[] { 5 }
                 };
-            BubbleSort.Sort(arrayToSort);
+            BubbleSort.SortOld1(arrayToSort);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortBySumMsg);
         }
 
         [Test]
-        public void SortBySumAscOneSubArrayWhichIsNullTest()
+        public void OldSortBySumAscOneSubArrayWhichIsNullTest()
         {
             int[][] arrayToSort = { null };
             int[][] arrayToSortExpected = { null };
-            BubbleSort.Sort(arrayToSort);
+            BubbleSort.SortOld1(arrayToSort);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortBySumMsg);
         }
 
         [Test]
-        public void SortBySumAscTwoSubarrayOneIsNullSortedTest()
+        public void OldSortBySumAscTwoSubarrayOneIsNullSortedTest()
         {
             int[][] arrayToSort = { new int[] { 2 }, null };
             int[][] arrayToSortExpected = { new int[] { 2 }, null };
-            BubbleSort.Sort(arrayToSort);
+            BubbleSort.SortOld1(arrayToSort);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortBySumMsg);
         }
 
         [Test]
-        public void SortBySumAscTwoSubarraysOneIsNullNotSortedTest()
+        public void OldSortBySumAscTwoSubarraysOneIsNullNotSortedTest()
         {
             int[][] arrayToSort = { null, new int[] { 2 } };
             int[][] arrayToSortExpected = { new int[] { 2 }, null };
-            BubbleSort.Sort(arrayToSort);
+            BubbleSort.SortOld1(arrayToSort);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortBySumMsg);
         }
 
         [Test]
-        public void SortBySumAscTwoSubarraysWhichAreNullTest()
+        public void OldSortBySumAscTwoSubarraysWhichAreNullTest()
         {
             int[][] arrayToSort = { null, null };
             int[][] arrayToSortExpected = { null, null };
-            BubbleSort.Sort(arrayToSort);
+            BubbleSort.SortOld1(arrayToSort);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortBySumMsg);
         }
 
         [Test]
-        public void ArgumentIsNull_Should_ThroughArgumentNullExceptionTest()
+        public void OldArgumentIsNull_Should_ThroughArgumentNullExceptionTest()
         {
             int[][] arrayToSort = null;
-            Assert.Catch(typeof(ArgumentNullException), () => BubbleSort.Sort(arrayToSort), "required type of exception is not thrown");
+            Assert.Catch(typeof(ArgumentNullException), () => BubbleSort.SortOld1(arrayToSort), "required type of exception is not thrown");
         }
 
         [Test]
-        public void SortBySumSumOfSubArrayExceedsLongTest()
+        public void OldSortBySumSumOfSubArrayExceedsLongTest()
         {
             throw new NotImplementedException();
         }
 
         #endregion tests for sorting by Sum
 
-        #region tests for sorting by Max value
+        #region sorting by Max value
 
         [Test]
-        public void SortByMaxValueAscTwoArraysWithOneElementUnsortedTest()
+        public void OldSortByMaxValueAscTwoArraysWithOneElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { 2 }, new int[] { 1 } };
             int[][] arrayToSortExpected = { new int[] { 1 }, new int[] { 2 } };
-            BubbleSort.Sort(arrayToSort, By.MaxElement);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueDescTwoArraysWithOneElementUnsortedTest()
+        public void OldSortByMaxValueDescTwoArraysWithOneElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { 1 }, new int[] { 2 } };
             int[][] arrayToSortExpected = { new int[] { 2 }, new int[] { 1 } };
-            BubbleSort.Sort(arrayToSort, By.MaxElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueAscTwoArraysWithOneNegativeElementSortedTest()
+        public void OldSortByMaxValueAscTwoArraysWithOneNegativeElementSortedTest()
         {
             int[][] arrayToSort = { new int[] { -2 }, new int[] { 1 } };
             int[][] arrayToSortExpected = { new int[] { -2 }, new int[] { 1 } };
-            BubbleSort.Sort(arrayToSort, By.MaxElement);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueDescTwoArraysWithOneNegativeElementUnsortedTest()
+        public void OldSortByMaxValueDescTwoArraysWithOneNegativeElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { -2 }, new int[] { 1 } };
             int[][] arrayToSortExpected = { new int[] { 1 }, new int[] { -2 } };
-            BubbleSort.Sort(arrayToSort, By.MaxElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueAscTwoArraysWithOneMaxIntElementUnsortedTest()
+        public void OldSortByMaxValueAscTwoArraysWithOneMaxIntElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { int.MaxValue }, new int[] { 1 } };
             int[][] arrayToSortExpected = { new int[] { 1 }, new int[] { int.MaxValue } };
-            BubbleSort.Sort(arrayToSort, By.MaxElement);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueDescTwoArraysWithOneMaxIntElementUnsortedTest()
+        public void OldSortByMaxValueDescTwoArraysWithOneMaxIntElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { int.MaxValue }, new int[] { 1 } };
             int[][] arrayToSortExpected = { new int[] { int.MaxValue }, new int[] { 1 } };
-            BubbleSort.Sort(arrayToSort, By.MaxElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueAscTwoArraysWithOneMinIntElementUnsortedTest()
+        public void OldSortByMaxValueAscTwoArraysWithOneMinIntElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { 1 }, new int[] { int.MinValue } };
             int[][] arrayToSortExpected = { new int[] { int.MinValue }, new int[] { 1 } };
-            BubbleSort.Sort(arrayToSort, By.MaxElement);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueDescTwoArraysWithOneMinIntElementUnsortedTest()
+        public void OldSortByMaxValueDescTwoArraysWithOneMinIntElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { 1 }, new int[] { int.MinValue } };
             int[][] arrayToSortExpected = { new int[] { 1 }, new int[] { int.MinValue } };
-            BubbleSort.Sort(arrayToSort, By.MaxElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueAscTwoArraysWithZeroedSubArraysUnsortedTest()
+        public void OldSortByMaxValueAscTwoArraysWithZeroedSubArraysUnsortedTest()
         {
             int[][] arrayToSort =
                 {
@@ -226,12 +226,12 @@ namespace IntJaggedArraySortingTests
                     new int[] { 1 },
                     new int[] { 5 }
                 };
-            BubbleSort.Sort(arrayToSort, By.MaxElement);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueDescTwoArraysWithZeroedSubArraysUnsortedTest()
+        public void OldSortByMaxValueDescTwoArraysWithZeroedSubArraysUnsortedTest()
         {
             int[][] arrayToSort =
                 {
@@ -249,160 +249,160 @@ namespace IntJaggedArraySortingTests
                     new int[] { 0 },
                     new int[] { -3 }
                 };
-            BubbleSort.Sort(arrayToSort, By.MaxElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueAscOneSubArrayWhichIsNullTest()
+        public void OldSortByMaxValueAscOneSubArrayWhichIsNullTest()
         {
             int[][] arrayToSort = { null };
             int[][] arrayToSortExpected = { null };
-            BubbleSort.Sort(arrayToSort, By.MaxElement);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueDescOneSubArrayWhichIsNullTest()
+        public void OldSortByMaxValueDescOneSubArrayWhichIsNullTest()
         {
             int[][] arrayToSort = { null };
             int[][] arrayToSortExpected = { null };
-            BubbleSort.Sort(arrayToSort, By.MaxElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueAscTwoSubarrayOneIsNullSortedTest()
+        public void OldSortByMaxValueAscTwoSubarrayOneIsNullSortedTest()
         {
             int[][] arrayToSort = { new int[] { 2 }, null };
             int[][] arrayToSortExpected = { new int[] { 2 }, null };
-            BubbleSort.Sort(arrayToSort, By.MaxElement);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueDescTwoSubarrayOneIsNullNotSortedTest()
+        public void OldSortByMaxValueDescTwoSubarrayOneIsNullNotSortedTest()
         {
             int[][] arrayToSort = { new int[] { 2 }, null };
             int[][] arrayToSortExpected = { null, new int[] { 2 } };
-            BubbleSort.Sort(arrayToSort, By.MaxElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueAscTwoSubarraysOneIsNullNotSortedTest()
+        public void OldSortByMaxValueAscTwoSubarraysOneIsNullNotSortedTest()
         {
             int[][] arrayToSort = { null, new int[] { 2 } };
             int[][] arrayToSortExpected = { new int[] { 2 }, null };
-            BubbleSort.Sort(arrayToSort, By.MaxElement);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueDescTwoSubarraysOneIsNullNotSortedTest()
+        public void OldSortByMaxValueDescTwoSubarraysOneIsNullNotSortedTest()
         {
             int[][] arrayToSort = { new int[] { 2 }, null };
             int[][] arrayToSortExpected = { null, new int[] { 2 } };
-            BubbleSort.Sort(arrayToSort, By.MaxElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueAscTwoSubarraysWhichAreNullTest()
+        public void OldSortByMaxValueAscTwoSubarraysWhichAreNullTest()
         {
             int[][] arrayToSort = { null, null };
             int[][] arrayToSortExpected = { null, null };
-            BubbleSort.Sort(arrayToSort, By.MaxElement);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMaxValueDescTwoSubarraysWhichAreNullTest()
+        public void OldSortByMaxValueDescTwoSubarraysWhichAreNullTest()
         {
             int[][] arrayToSort = { null, null };
             int[][] arrayToSortExpected = { null, null };
-            BubbleSort.Sort(arrayToSort, By.MaxElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MaxElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         #endregion tests for sorting by Max value
 
-        #region tests for sorting by Min value
+        #region sorting by Min value
 
         [Test]
-        public void SortByMinValueAscTwoArraysWithOneElementSortedTest()
+        public void OldSortByMinValueAscTwoArraysWithOneElementSortedTest()
         {
             int[][] arrayToSort = { new int[] { 2 }, new int[] { 1 } };
             int[][] arrayToSortExpected = { new int[] { 1 }, new int[] { 2 } };
-            BubbleSort.Sort(arrayToSort, By.MinElement);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMinValueMsg);
         }
 
         [Test]
-        public void SortByMinValueDescTwoArraysWithOneElementUnsortedTest()
+        public void OldSortByMinValueDescTwoArraysWithOneElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { 1 }, new int[] { 2 } };
             int[][] arrayToSortExpected = { new int[] { 2 }, new int[] { 1 } };
-            BubbleSort.Sort(arrayToSort, By.MinElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMinValueMsg);
         }
 
         [Test]
-        public void SortByMinValueAscTwoArraysWithOneNegativeElementSortedTest()
+        public void OldSortByMinValueAscTwoArraysWithOneNegativeElementSortedTest()
         {
             int[][] arrayToSort = { new int[] { -2 }, new int[] { 1 } };
             int[][] arrayToSortExpected = { new int[] { -2 }, new int[] { 1 } };
-            BubbleSort.Sort(arrayToSort, By.MinElement);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMinValueMsg);
         }
 
         [Test]
-        public void SortByMinValueDescTwoArraysWithOneNegativeElementUnsortedTest()
+        public void OldSortByMinValueDescTwoArraysWithOneNegativeElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { -2 }, new int[] { 1 } };
             int[][] arrayToSortExpected = { new int[] { 1 }, new int[] { -2 } };
-            BubbleSort.Sort(arrayToSort, By.MinElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMinValueMsg);
         }
 
         [Test]
-        public void SortByMinValueAscTwoArraysWithOneMaxIntElementUnsortedTest()
+        public void OldSortByMinValueAscTwoArraysWithOneMaxIntElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { int.MaxValue }, new int[] { 1 } };
             int[][] arrayToSortExpected = { new int[] { 1 }, new int[] { int.MaxValue } };
-            BubbleSort.Sort(arrayToSort, By.MinElement);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMinValueMsg);
         }
 
         [Test]
-        public void SortByMinValueDescTwoArraysWithOneMaxIntElementUnsortedTest()
+        public void OldSortByMinValueDescTwoArraysWithOneMaxIntElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { int.MaxValue }, new int[] { 1 } };
             int[][] arrayToSortExpected = { new int[] { int.MaxValue }, new int[] { 1 } };
-            BubbleSort.Sort(arrayToSort, By.MinElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMinValueMsg);
         }
 
         [Test]
-        public void SortByMinValueAscTwoArraysWithOneMinIntElementUnsortedTest()
+        public void OldSortByMinValueAscTwoArraysWithOneMinIntElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { 1 }, new int[] { int.MinValue } };
             int[][] arrayToSortExpected = { new int[] { int.MinValue }, new int[] { 1 } };
-            BubbleSort.Sort(arrayToSort, By.MinElement);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMinValueMsg);
         }
 
         [Test]
-        public void SortByMinValueDescTwoArraysWithOneMinIntElementUnsortedTest()
+        public void OldSortByMinValueDescTwoArraysWithOneMinIntElementUnsortedTest()
         {
             int[][] arrayToSort = { new int[] { 1 }, new int[] { int.MinValue } };
             int[][] arrayToSortExpected = { new int[] { 1 }, new int[] { int.MinValue } };
-            BubbleSort.Sort(arrayToSort, By.MinElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMinValueMsg);
         }
 
         [Test]
-        public void SortByMinValueAscTwoArraysWithZeroedSubArraysUnsortedTest()
+        public void OldSortByMinValueAscTwoArraysWithZeroedSubArraysUnsortedTest()
         {
             int[][] arrayToSort =
                 {
@@ -420,12 +420,12 @@ namespace IntJaggedArraySortingTests
                     new int[] { 1 },
                     new int[] { 5 }
                 };
-            BubbleSort.Sort(arrayToSort, By.MinElement);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMinValueDescTwoArraysWithZeroedSubArraysUnsortedTest()
+        public void OldSortByMinValueDescTwoArraysWithZeroedSubArraysUnsortedTest()
         {
             int[][] arrayToSort =
                 {
@@ -443,70 +443,70 @@ namespace IntJaggedArraySortingTests
                     new int[] { 0 },
                     new int[] { -3 }
                 };
-            BubbleSort.Sort(arrayToSort, By.MinElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMinValueAscOneSubArrayWhichIsNullTest()
+        public void OldSortByMinValueAscOneSubArrayWhichIsNullTest()
         {
             int[][] arrayToSort = { null };
             int[][] arrayToSortExpected = { null };
-            BubbleSort.Sort(arrayToSort, By.MinElement);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMinValueDescOneSubArrayWhichIsNullTest()
+        public void OldSortByMinValueDescOneSubArrayWhichIsNullTest()
         {
             int[][] arrayToSort = { null };
             int[][] arrayToSortExpected = { null };
-            BubbleSort.Sort(arrayToSort, By.MinElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMinValueAscTwoSubarrayOneIsNullNotSortedTest()
+        public void OldSortByMinValueAscTwoSubarrayOneIsNullNotSortedTest()
         {
             int[][] arrayToSort = { new int[] { 2 }, null };
             int[][] arrayToSortExpected = { null, new int[] { 2 } };
-            BubbleSort.Sort(arrayToSort, By.MinElement);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMinValueDescTwoSubarrayOneIsNullSortedTest()
+        public void OldSortByMinValueDescTwoSubarrayOneIsNullSortedTest()
         {
             int[][] arrayToSort = { new int[] { 2 }, null };
             int[][] arrayToSortExpected = { new int[] { 2 }, null };
-            BubbleSort.Sort(arrayToSort, By.MinElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMinValueAscTwoSubarraysOneIsNullSortedTest()
+        public void OldSortByMinValueAscTwoSubarraysOneIsNullSortedTest()
         {
             int[][] arrayToSort = { null, new int[] { 2 } };
             int[][] arrayToSortExpected = { null, new int[] { 2 } };
-            BubbleSort.Sort(arrayToSort, By.MinElement);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMinValueDescTwoSubarraysOneIsNullSortedTest()
+        public void OldSortByMinValueDescTwoSubarraysOneIsNullSortedTest()
         {
             int[][] arrayToSort = { new int[] { 2 }, null };
             int[][] arrayToSortExpected = { new int[] { 2 }, null };
-            BubbleSort.Sort(arrayToSort, By.MinElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
         [Test]
-        public void SortByMinValueAscTwoSubarraysWhichAreNullTest()
+        public void OldSortByMinValueAscTwoSubarraysWhichAreNullTest()
         {
             int[][] arrayToSort = { null, null };
             int[][] arrayToSortExpected = { null, null };
-            BubbleSort.Sort(arrayToSort, By.MinElement);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 
@@ -515,7 +515,7 @@ namespace IntJaggedArraySortingTests
         {
             int[][] arrayToSort = { null, null };
             int[][] arrayToSortExpected = { null, null };
-            BubbleSort.Sort(arrayToSort, By.MinElement, Direction.Descending);
+            BubbleSort.SortOld1(arrayToSort, By.MinElement, Direction.Descending);
             Assert.True(AreJaggedIntArraysEqual(arrayToSortExpected, arrayToSort), IncorrectSortByMaxValueMsg);
         }
 

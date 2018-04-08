@@ -46,7 +46,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IntJaggedArraySortingBySumTests.cs" />
+    <Compile Include="IntJaggedArraySortingByDelegateTests.cs" />
+    <Compile Include="IntJaggedArraySortingByIComparerTests.cs" />
+    <Compile Include="OLdIntJaggedArraySortingByParametersTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

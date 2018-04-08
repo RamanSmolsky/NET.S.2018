@@ -41,7 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BubbleSort.cs" />
+    <Compile Include="ICompareIntArrays.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortByMaxElementAscending.cs" />
+    <Compile Include="SortByMaxElementDescending.cs" />
+    <Compile Include="SortByMinElementAscending.cs" />
+    <Compile Include="SortByMinElementDescending.cs" />
+    <Compile Include="SortBySumAscDelegate.cs" />
+    <Compile Include="SortBySumDescending.cs" />
+    <Compile Include="SortBySumAscending.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

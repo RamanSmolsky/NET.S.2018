@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace IntJaggedArraySorting
 {
+    public delegate int CompareIntArraysDelegate(int[] lhs, int[] rhs);
+
     /// <summary>
     /// Defines by which method internal subarrays to be sorted:
     /// Sum - by sum of the elements
@@ -23,17 +26,98 @@ namespace IntJaggedArraySorting
         Ascending,
         Descending
     }
-
+    
     public class BubbleSort
     {
         #region public members
+
+        public static void Sort(int[][] array, CompareIntArraysDelegate comparator)
+        {
+            if (array == null || comparator == null)
+            {
+                throw new ArgumentNullException($"both {nameof(array)} (array to sort) and {nameof(comparator)} (sort method) should not be null");
+            }
+
+            bool swapped = true;
+            int numOfArrays = array.Length;
+
+            while (swapped)
+            {
+                swapped = false;
+
+                for (int i = 0; i < numOfArrays - 1; i++)
+                {
+                    if (comparator(array[i], array[i + 1]) < 0)
+                    {
+                        swapped = true;
+                        SwapElements(ref array[i], ref array[i + 1]);
+                    }
+                }
+            }
+        }
+
+        public static void Sort(int[][] array, ICompareIntArray comparator)
+        {
+            if (array == null || comparator == null)
+            {
+                throw new ArgumentNullException($"both {nameof(array)} (array to sort) and {nameof(comparator)} (sort method) should not be null");
+            }
+
+            bool swapped = true;
+            int numOfArrays = array.Length;
+
+            while (swapped)
+            {
+                swapped = false;
+
+                for (int i = 0; i < numOfArrays - 1; i++)
+                {
+                    if (comparator.CompareIntArrays(array[i], array[i + 1]) < 0)
+                    {
+                        swapped = true;
+                        SwapElements(ref array[i], ref array[i + 1]);
+                    }
+                }
+            }
+        }
+
         /// <summary>
-        /// Sorts jagged array of integers
+        /// Sorts jagged array of integer arrays using provided method of comparison
+        /// </summary>
+        /// <param name="arrayToSort">jagged array of integer arrays to be sorted</param>
+        /// <param name="sortMethod">sorting method, which implements <see cref="IComparer<int[]>"/></param>        
+        public static void Sort(int[][] arrayToSort, IComparer<int[]> sortMethod)
+        {
+            if (arrayToSort == null || sortMethod == null)
+            {
+                throw new ArgumentNullException($"both {nameof(arrayToSort)} (array to sort) and {nameof(sortMethod)} (sort method) should not be null");
+            }
+
+            bool swapped = true;
+            int numOfArrays = arrayToSort.Length;
+
+            while (swapped)
+            {
+                swapped = false;
+
+                for (int i = 0; i < numOfArrays - 1; i++)
+                {
+                    if (sortMethod.Compare(arrayToSort[i], arrayToSort[i + 1]) < 0)
+                    {
+                        swapped = true;
+                        SwapElements(ref arrayToSort[i], ref arrayToSort[i + 1]);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sorts jagged array of integers - old version 1
         /// </summary>
         /// <param name="arrayToSort">jagged array of integers to be sorted</param>
         /// <param name="sortMethod">sorting method, <see cref="By"/>, default is <see cref="By.Sum"/></param>
         /// <param name="sortDirection">sorting direction, <see cref="Direction"/>, default is <see cref="Direction.Ascending"/></param>
-        public static void Sort(int[][] arrayToSort, By sortMethod = By.Sum, Direction sortDirection = Direction.Ascending)
+        public static void SortOld1(int[][] arrayToSort, By sortMethod = By.Sum, Direction sortDirection = Direction.Ascending)
         {
             if (arrayToSort == null)
             {

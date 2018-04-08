@@ -25,14 +25,23 @@ namespace PolynomMath
 
         public Polynom(params double[] coefficients)
         {
-            Coefficients = coefficients;
+            Coefficients = coefficients; 
+            ////неявное, но страшное нарушение инкапсуляции - создаввать копию
 
             Order = Coefficients.Length - 1;
         }
 
         public int Order { get; private set; }
 
-        public double[] Coefficients { get; private set; }
+        public double[] Coefficients { get; private set; } //// = { } - явно инициализировать
+        ////нарушение инкапсуляции - это ссылочный тип, вернется ссылка на "внутренний" массив, который высветится наружу
+
+        //// нужен конфиг
+        //// нужно продумать и применить:
+        //// создание полинома из коэффициентов с величинами разной точности, величины
+        //// часть коэффициентов будет "выключаить" те или иные степени переменной
+        //// то есть кол-во элементов в массиве входных параметров не равно порядку массива
+        //// в моей текущей реализации нельзя задать полиномы с пропущенными (=0) элементами
 
         public static Polynom operator +(Polynom lhs, Polynom rhs)
         {
