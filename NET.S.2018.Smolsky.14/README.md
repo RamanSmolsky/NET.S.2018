@@ -1,6 +1,6 @@
-4#### Developing ASP.NET MVC web applications training, spring 2018.
+#### Developing ASP.NET MVC web applications training, spring 2018.
 
-##### Tasks for [Day 12](https://github.com/AnzhelikaKravchuk/Training.-Spring-2018/tree/master/Day%2014):
+##### Tasks for [Day 14](https://github.com/AnzhelikaKravchuk/Training.-Spring-2018/tree/master/Day%2014):
 
 
 1. [#1 from Day 13](https://github.com/AnzhelikaKravchuk/Training.-Spring-2018/tree/master/Day%2013) - 
