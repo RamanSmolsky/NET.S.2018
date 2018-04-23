@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Task1.Solution
@@ -65,6 +66,43 @@ namespace Task1.Solution
 
             return Tuple.Create(true, "Password is Ok. User was created");
         }
+
+        public Tuple<bool, string> VerifyPassword(string password, IEnumerable<IPasswordValidator> validators)
+        {
+            if (password == null)
+                throw new ArgumentException($"{password} is null arg");
+
+            if (password == string.Empty)
+                return Tuple.Create(false, $"{password} is empty ");
+
+            if (validators == null)
+            {
+                return VerifyPassword(password);
+            }
+
+            Tuple<bool, string> result = Tuple.Create(true, "");
+
+            bool isValid = true;
+            string message = "";
+
+            foreach (IPasswordValidator rule in validators)
+            {
+                Tuple<bool, string> tempResult = rule.VerifyPassword(password);
+                if (!tempResult.Item1)
+                {
+                    isValid = false;
+                    message += tempResult.Item2 + ";";                    
+                }                
+            }
+
+            if (!isValid)
+                return Tuple.Create(false, $"'{password}' is not valid, violations: {message}");
+
+            _repository.Create(password);
+
+            return Tuple.Create(true, "Password is Ok. User was created");
+        }
+
 
         public PasswordCheckerService(IRepository repository)
         {
