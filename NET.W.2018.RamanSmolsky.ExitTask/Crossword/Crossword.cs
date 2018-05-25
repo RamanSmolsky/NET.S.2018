@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// TODO: add arguments checking
 // TODO: add checking for the internal values of the arrays
 // TODO: add constructor which gets not the char[,], but just size
 // TODO: add possibility to handle not just square crosswords, but reqtangular also
@@ -20,20 +19,21 @@ namespace Crossword
             List<string> wordsVertical,
             List<Position> wordsVerticalCoordinates)
         {
-            // TODO: ?need to copy, not just assign
-            Table = crossword;
+            if (crossword == null)
+                throw new ArgumentNullException($"crossword table ({nameof(crossword)}) to fill in should not be null");
 
-            // TODO: ?need to copy, not just assign
-            WordsHorisontal = wordsHorisontal;
+            if (wordsHorisontal == null || wordsHorisontalCoordinates == null || wordsVertical == null || wordsVerticalCoordinates == null)
+                throw new ArgumentNullException($"lists of words and lists of placements for them should not be null");
 
-            // TODO: ?need to copy, not just assign
-            WordsHorisontalCoordinates = wordsHorisontalCoordinates;
+            Table = (char[,])crossword.Clone();
 
-            // TODO: ?need to copy, not just assign
-            WordsVertical = wordsVertical;
+            WordsHorisontal = new List<string>(wordsHorisontal);
 
-            // TODO: ?need to copy, not just assign
-            WordsVerticalCoordinates = wordsVerticalCoordinates;
+            WordsHorisontalCoordinates = new List<Position>(wordsHorisontalCoordinates);
+
+            WordsVertical = new List<string>(wordsVertical);
+
+            WordsVerticalCoordinates = new List<Position>(wordsVerticalCoordinates);
         }
 
         public char[,] Table { get; private set; }
