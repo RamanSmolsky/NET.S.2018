@@ -1,6 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
+// TODO: add arguments checking
+// TODO: add checking for the internal values of the arrays
+// TODO: add constructor which gets not the char[,], but just size
+// TODO: add possibility to handle not just square crosswords, but reqtangular also
+// TODO: add verification that provided lists are matching the size(s) of the crossword
+// TODO: add possibility to change placeholder symbol
+// TODO: ? should the lists be fixed (e.g. private setters)
+// TODO: ? will another organization of word-position in crossword provide any benefits (e.g. separate item which holds the word and its position (coordinates) and placement (vert, horisont)?
 namespace Crossword
 {
     public class Crossword
